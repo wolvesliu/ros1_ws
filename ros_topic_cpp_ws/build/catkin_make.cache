@@ -1,0 +1,2 @@
+topic_cpp
+-DCATKIN_DEVEL_PREFIX=/home/js/rosjs/ros_topic_cpp_ws/devel -DCMAKE_INSTALL_PREFIX=/home/js/rosjs/ros_topic_cpp_ws/install -G Unix Makefiles

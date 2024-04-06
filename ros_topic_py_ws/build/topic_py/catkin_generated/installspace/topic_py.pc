@@ -1,0 +1,8 @@
+prefix=/home/js/rosjs/ros_topic_py_ws/install
+
+Name: topic_py
+Description: Description of topic_py
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

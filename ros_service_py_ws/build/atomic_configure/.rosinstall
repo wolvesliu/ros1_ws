@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/js/rosjs/ros_service_py_ws/devel/setup.sh

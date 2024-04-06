@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/js/rosjs/ros_ws/devel/setup.sh

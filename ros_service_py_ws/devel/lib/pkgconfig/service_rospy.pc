@@ -1,0 +1,8 @@
+prefix=/home/js/rosjs/ros_service_py_ws/devel
+
+Name: service_rospy
+Description: Description of service_rospy
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+beginner_tutorials:service_rospy
+-DCATKIN_DEVEL_PREFIX=/home/js/rosjs/ros_service_py_ws/devel -DCMAKE_INSTALL_PREFIX=/home/js/rosjs/ros_service_py_ws/install -G Unix Makefiles

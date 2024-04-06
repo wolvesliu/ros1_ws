@@ -1,0 +1,8 @@
+prefix=/home/js/rosjs/ros_topic_cpp_ws/install
+
+Name: topic_cpp
+Description: Description of topic_cpp
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
