@@ -153,6 +153,13 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(talker src/talker.cpp) #将源文件生成一个可执行文件talker
+target_link_libraries(talker ${catkin_LIBRARIES}) #将可执行文件与ros的库做一个链接
+
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
@@ -208,13 +215,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(talker src/talker.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
-# add_dependencies(talker topic_cpp_generate_messages_cpp)
 
-add_executable(listener src/listener.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES})
-# add_dependencies(listener topic_cpp_generate_messages_cpp)
+
 
 
 

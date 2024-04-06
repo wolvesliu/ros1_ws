@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "talker"); //初始化ROS,节点名称为talker 
+  ros::init(argc, argv, "talker"); //初始化ROS节点,节点名称为talker 
 
   ros::NodeHandle n; //为这个进程的节点创建句柄
 
@@ -21,18 +21,18 @@ int main(int argc, char **argv)
   int count = 0;
   while (ros::ok())
   {
-    std_msgs::String msg;
-
+    //初始化消息数据
+    std_msgs::String msg;//声明消息
     std::stringstream ss;
     ss << "hello world " << count;
     msg.data = ss.str();
 
+    //发布消息
     ROS_INFO("%s", msg.data.c_str());
-
     chatter_pub.publish(msg);//把这个信息广播给了任何已连接的节点。
 
     ros::spinOnce();
-
+    //按照循环频率延时
     loop_rate.sleep();//使用ros::Rate在剩下的时间内睡眠，以让我们达到10Hz的发布速率
     ++count;
   }
