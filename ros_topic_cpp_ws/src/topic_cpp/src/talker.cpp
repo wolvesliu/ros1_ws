@@ -10,7 +10,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n; //为这个进程的节点创建句柄。管理ros相关的api等资源，创建发布者要用到
 
   //告诉主节点我们将要在chatter话题上发布一个类型为std_msgs/String的消息。
-  //第1个参数话题名称. 第二个参数是发布队列的大小,它将最多缓存1000条消息，不然就会丢弃旧消息。
+  //第1个参数话题名称. 第二个参数是发布队列的大小,它将最多缓存1000条消息，不然就会丢弃旧消息，保留新消息。
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);//创建发布者
 
   //它会记录从上次调用Rate::sleep()到现在已经有多长时间，并休眠正确的时间。
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
   //ros::ok()在以下情况会返回false：收到SIGINT信号（Ctrl+C）...
   int count = 0;
-  while (ros::ok())
+  while (ros::ok())// 用来干：封装数据、发布消息
   {
     //初始化消息数据
     std_msgs::String msg;//声明消息
