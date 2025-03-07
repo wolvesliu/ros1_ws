@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "talker"); //初始化ROS节点,节点名称为talker 
 
-  ros::NodeHandle n; //为这个进程的节点创建句柄
+  ros::NodeHandle n; //为这个进程的节点创建句柄。管理ros相关的api等资源，创建发布者要用到
 
   //告诉主节点我们将要在chatter话题上发布一个类型为std_msgs/String的消息。
   //第1个参数话题名称. 第二个参数是发布队列的大小,它将最多缓存1000条消息，不然就会丢弃旧消息。
