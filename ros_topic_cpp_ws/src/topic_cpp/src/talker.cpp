@@ -32,14 +32,14 @@ int main(int argc, char **argv)
 
     //发布消息
     ROS_INFO("%s", msg.data.c_str());
-    chatter_pub.publish(msg);//把这个信息广播给了任何已连接的节点。
-
-    // 处理一次回调函数，然后继续执行后续代码
-    ros::spinOnce();
+    chatter_pub.publish(msg);//把这个信息广播给了任何已连接的节点。    
     
     //按照循环频率延时
     loop_rate.sleep();//使用ros::Rate在剩下的时间内睡眠，以让我们达到10Hz的发布速率
     ++count; //count++ 都行，都是计数加1
+
+    // 处理一次回调函数，然后继续执行后续代码，但是发布节点没有回调函数，所以可以不写，但是官方推荐写
+    ros::spinOnce();
   }
 
 
