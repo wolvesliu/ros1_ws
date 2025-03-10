@@ -5,6 +5,8 @@
 
 int main(int argc, char **argv)
 {
+  setlocale(LC_ALL,""); //打印中文的时候避免乱码
+  
   ros::init(argc, argv, "talker"); //初始化ROS节点,节点名称为talker 
 
   ros::NodeHandle n; //为这个进程的节点创建句柄。管理ros相关的api等资源，创建发布者要用到
@@ -17,9 +19,10 @@ int main(int argc, char **argv)
   //以每秒10次的速率向chatter循环发布消息
   ros::Rate loop_rate(10); //指定循环的频率,以10Hz运行
 
-  //ros::ok()在以下情况会返回false：收到SIGINT信号（Ctrl+C）...
+  //设置编号，计数，看循环了多少次
   int count = 0;
-  while (ros::ok())// 用来干：封装数据、发布消息
+  // 用来干：封装数据、发布消息
+  while (ros::ok())//如果节点活着就一直循环，ros::ok()在以下情况会返回false：收到SIGINT信号（Ctrl+C）...
   {
     //初始化消息数据
     std_msgs::String msg;//声明消息
@@ -36,7 +39,7 @@ int main(int argc, char **argv)
     
     //按照循环频率延时
     loop_rate.sleep();//使用ros::Rate在剩下的时间内睡眠，以让我们达到10Hz的发布速率
-    ++count;
+    ++count; //count++ 都行，都是计数加1
   }
 
 
