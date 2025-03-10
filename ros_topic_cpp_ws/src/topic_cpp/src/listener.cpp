@@ -10,6 +10,7 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg) //std_msgs::String�
 
 int main(int argc, char **argv)
 {
+  setlocale(LC_ALL,""); //打印中文的时候避免乱码
   ros::init(argc, argv, "listener");//初始化ROS,节点名称为talker 
 
   ros::NodeHandle n;//为这个进程的节点创建句柄
